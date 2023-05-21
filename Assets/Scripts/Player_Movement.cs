@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 10f;
-    [SerializeField] bool isMoving = false;
+    public bool isMoving = false;
 
     // Update is called once per frame
     void Update()
@@ -15,5 +15,10 @@ public class Player_Movement : MonoBehaviour
             float xDirection = moveSpeed * Time.deltaTime;
             transform.Translate(xDirection, 0, 0);
         }
+    }
+
+    public bool GetIsMoving()
+    {
+        return isMoving;
     }
 }
